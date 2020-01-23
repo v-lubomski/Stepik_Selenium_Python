@@ -3,7 +3,7 @@ import time
 import math
 
 browser = webdriver.Chrome()
-link = 'http://suninjuly.github.io/math.html'
+link = 'http://suninjuly.github.io/get_attribute.html'
 
 
 def calc(x):
@@ -12,10 +12,10 @@ def calc(x):
 
 try:
     browser.get(link)
-    # получаем значение переменной х и вычисляем у
-    x_el = browser.find_element_by_id('input_value')
-    x = x_el.text
-    y = calc(x)
+    # получаем значение valuex и вычисляем у
+    treasure = browser.find_element_by_id('treasure')
+    valuex = treasure.get_attribute('valuex')
+    y = calc(valuex)
     # находим поле и вставляем ответ
     input_for_answer = browser.find_element_by_id('answer')
     input_for_answer.send_keys(y)
@@ -28,5 +28,3 @@ try:
 
 finally:
     browser.quit()
-
-
