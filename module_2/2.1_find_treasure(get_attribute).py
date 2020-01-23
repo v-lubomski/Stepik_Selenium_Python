@@ -12,6 +12,7 @@ def calc(x):
 
 try:
     browser.get(link)
+    time.sleep(1)
     # получаем значение valuex и вычисляем у
     treasure = browser.find_element_by_id('treasure')
     valuex = treasure.get_attribute('valuex')
